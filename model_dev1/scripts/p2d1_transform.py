@@ -104,7 +104,7 @@ len(df)
 ## Performing label encoding on non-numerical data/categorical variables, so the standardscaler in p3 can handle it
 from sklearn.preprocessing import LabelEncoder
 
-columns_to_encode = ['BrandName', 'PrimaryCategory', 'SubCategory', 'ChemicalName']  # Replace with your column names
+columns_to_encode = ['BrandName', 'PrimaryCategory', 'SubCategory', 'ChemicalName']  
 
 label_encoder = LabelEncoder()
 

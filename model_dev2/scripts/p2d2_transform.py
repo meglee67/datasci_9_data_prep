@@ -67,7 +67,47 @@ df_mapping_date
 ## save mapping to csv
 df_mapping_date.to_csv('../data/processed/mapping_vic_age_group.csv', index=False)
 
+## perform ordinal encoding on occur_date
+enc = OrdinalEncoder()
+enc.fit(df[['occur_date']])
+df['occur_date'] = enc.transform(df[['occur_date']])
+
+## create dataframe with mapping
+df_mapping_date = pd.DataFrame(enc.categories_[0], columns=['occur_date'])
+df_mapping_date['occur_date_ordinal'] = df_mapping_date.index
+df_mapping_date
+
+## save mapping to csv
+df_mapping_date.to_csv('../data/processed/mapping_occur_date.csv', index=False)
+
+## perform ordinal encoding on occur_time
+enc = OrdinalEncoder()
+enc.fit(df[['occur_time']])
+df['occur_time'] = enc.transform(df[['occur_time']])
+
+## create dataframe with mapping
+df_mapping_date = pd.DataFrame(enc.categories_[0], columns=['occur_time'])
+df_mapping_date['occur_time_ordinal'] = df_mapping_date.index
+df_mapping_date
+
+## save mapping to csv
+df_mapping_date.to_csv('../data/processed/mapping_occur_time.csv', index=False)
+
 len(df)
+
+## Performing label encoding on non-numerical data/categorical variables, so the standardscaler in p3 can handle it
+from sklearn.preprocessing import LabelEncoder
+
+columns_to_encode = ['boro', 'vic_race', 'vic_sex']  
+
+label_encoder = LabelEncoder()
+
+# Iterating through selected columns and applying label encoding
+for col in columns_to_encode:
+    df[col] = label_encoder.fit_transform(df[col])
+
+# Display the updated DataFrame with label encoded columns
+print(df)
 
 #### save a temporary csv file of 1000 rows to test the model
 df.head(10000).to_csv('../data/processed/shootings1000.csv', index=False)
