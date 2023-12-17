@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.preprocessing import OrdinalEncoder
 
 ## Loading raw data (pickle)
-df = pd.read_pickle('../data/raw/cosmetic.pkl')
+df = pd.read_csv('../data/raw/cosmetic.csv')
 
 ## Getting column names
 print(df.columns)
@@ -86,15 +86,25 @@ df_mapping_date
 ## save mapping to csv
 df_mapping_date.to_csv('../data/processed/mapping_MostRecentDateReported.csv', index=False)
 
-len(df)
+## perform ordinal encoding on InitialDateReported
+enc = OrdinalEncoder()
+enc.fit(df[['InitialDateReported']])
+df['InitialDateReported'] = enc.transform(df[['InitialDateReported']])
 
-#### save a temporary csv file of 1000 rows to test the model
-df.head(10000).to_csv('../data/processed/cosmetic1000.csv', index=False)
+## create dataframe with mapping
+df_mapping_date = pd.DataFrame(enc.categories_[0], columns=['MostRecentDateReported'])
+df_mapping_date['MostRecentDateReported_ordinal'] = df_mapping_date.index
+df_mapping_date
+
+## save mapping to csv
+df_mapping_date.to_csv('../data/processed/mapping_MostRecentDateReported.csv', index=False)
+
+len(df)
 
 ## Performing label encoding on non-numerical data/categorical variables, so the standardscaler in p3 can handle it
 from sklearn.preprocessing import LabelEncoder
 
-columns_to_encode = ['column1', 'column2']  # Replace with your column names
+columns_to_encode = ['BrandName', 'PrimaryCategory', 'SubCategory', 'ChemicalName']  # Replace with your column names
 
 label_encoder = LabelEncoder()
 
@@ -104,3 +114,6 @@ for col in columns_to_encode:
 
 # Display the updated DataFrame with label encoded columns
 print(df)
+
+#### save a temporary csv file of 1000 rows to test the model
+df.head(10000).to_csv('../data/processed/cosmetic1000.csv', index=False)
