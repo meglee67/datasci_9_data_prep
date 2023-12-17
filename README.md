@@ -6,8 +6,8 @@
 <br>
 
 ## Dataset Selection
-* The 1st dataset was taken from data.gov, [Crime Data from 2020 to Present](https://catalog.data.gov/dataset/crime-data-from-2020-to-present)
-  * This dataset reflects incidents of crime in the City of Los Angeles dating back to 2020
+* The 1st dataset was taken from data.gov, [Chemicals in Cosmetics]([https://catalog.data.gov/dataset/crime-data-from-2020-to-present](https://catalog.data.gov/dataset/chemicals-in-cosmetics-8c29f))
+  * This dataset reflects information that has been reported to the California Safe Cosmetics Program (CSCP) in the California Department of Public Health (CDPH).
 * The 2nd dataset was taken from data.gov, [NYPD Shooting Incident Data - Historic](https://catalog.data.gov/dataset/nypd-shooting-incident-data-historic)
   * This dataset reflects shooting data from incidents in NYC.
 
