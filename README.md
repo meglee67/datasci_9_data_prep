@@ -8,8 +8,8 @@
 ## Dataset Selection
 * The 1st dataset was taken from data.gov, [Crime Data from 2020 to Present](https://catalog.data.gov/dataset/crime-data-from-2020-to-present)
   * This dataset reflects incidents of crime in the City of Los Angeles dating back to 2020
-* The 2nd dataset was taken from data.gov, [Motor Vehicle Collisions - Crashes](https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes)
-  * This dataset reflects car crash data from incidents in NYC.
+* The 2nd dataset was taken from data.gov, [NYPD Shooting Incident Data (Historic)](https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes](https://catalog.data.gov/dataset/nypd-shooting-incident-data-historic)
+  * This dataset reflects shooting data from incidents in NYC.
 
 ## Data Cleaning and Transformation Plan
 *
