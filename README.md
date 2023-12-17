@@ -6,12 +6,25 @@
 <br>
 
 ## Dataset Selection
-* The 1st dataset was taken from data.gov, [Chemicals in Cosmetics]([https://catalog.data.gov/dataset/crime-data-from-2020-to-present](https://catalog.data.gov/dataset/chemicals-in-cosmetics-8c29f))
+* The 1st dataset was taken from data.gov, [Chemicals in Cosmetics](https://catalog.data.gov/dataset/chemicals-in-cosmetics-8c29f)
   * This dataset reflects information that has been reported to the California Safe Cosmetics Program (CSCP) in the California Department of Public Health (CDPH).
 * The 2nd dataset was taken from data.gov, [NYPD Shooting Incident Data - Historic](https://catalog.data.gov/dataset/nypd-shooting-incident-data-historic)
   * This dataset reflects shooting data from incidents in NYC.
 
 ## Data Cleaning and Transformation Plan
+
+### Extraction
+* Initially I copied the p1_extract.py script from the [Week 9 p1_extract.py](https://github.com/hantswilliams/HHA_507_2023/blob/86d8439cd2409c649a4d9404e5d9488971e194c2/WK9/code/model_dev/scripts/p1_extract.py), but after modification found that it kept giving me the error that it wasn't able to save my files because the directory was non-existent.
+* I had also run into the problem that the .py file didn't exist but to fix that I just cd into the scripts directory under the model_dev folder
+* To run the .py file, I needed to cd into /datasci_9_data_prep/model_dev1/scripts, but then I kept getting the message that the data/raw didn't exist even though when I kept doing ls -d */, I could see that the directory did exist 
+* Instead of ('model_dev1/data/raw/cosmetic.csv', index=False) I had to replace the model_dev1 part with a ..
+* ../ moves up one directory level from the scripts directory and then navigates to model_dev1/data/raw
+
+### Transformation
+* Copied the code from [Week 9 p2_transform.py](https://github.com/hantswilliams/HHA_507_2023/blob/86d8439cd2409c649a4d9404e5d9488971e194c2/WK9/code/model_dev/scripts/p2_transform.py#L71)
+
+### Transformation
+* First I needed to ``pip install sklearn``
 *
 
 ## Dataset Splitting
