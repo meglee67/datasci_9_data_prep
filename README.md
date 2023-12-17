@@ -4,6 +4,7 @@
 * Assignment details below
 
 <br>
+
 ## Dataset Selection
 * The 1st dataset was taken from data.gov, [Crime Data from 2020 to Present](https://catalog.data.gov/dataset/crime-data-from-2020-to-present)
   * This dataset reflects incidents of crime in the City of Los Angeles dating back to 2020
