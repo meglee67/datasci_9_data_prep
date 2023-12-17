@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.preprocessing import OrdinalEncoder
 
 ## Loading raw data (pickle)
-df = pd.read_csv('../data/raw/cosmetic.csv')
+df = pd.read_pickle('../data/raw/cosmetic.pkl')
 
 ## Getting column names
 print(df.columns)
