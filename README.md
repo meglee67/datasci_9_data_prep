@@ -4,6 +4,20 @@
 * Assignment details below
 
 <br>
+## Dataset Selection
+* The 1st dataset was taken from data.gov, [Crime Data from 2020 to Present](https://catalog.data.gov/dataset/crime-data-from-2020-to-present)
+  * This dataset reflects incidents of crime in the City of Los Angeles dating back to 2020
+* The 2nd dataset was taken from data.gov, [Motor Vehicle Collisions - Crashes](https://catalog.data.gov/dataset/motor-vehicle-collisions-crashes)
+  * This dataset reflects car crash data from incidents in NYC.
+
+## Data Cleaning and Transformation Plan
+*
+
+## Dataset Splitting
+*
+
+
+<br>
 
 ## **Week 9: Data Preparation for Machine Learning**
 
