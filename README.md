@@ -33,7 +33,10 @@
 
 
 ## Dataset Splitting
-*
+* I copied the [Week 9 p3_compute.py](https://github.com/hantswilliams/HHA_507_2023/blob/86d8439cd2409c649a4d9404e5d9488971e194c2/WK9/code/model_dev/scripts/p3_compute.py)
+* Not many modifications made for the splitting, but I did run into several errors with my datatypes
+* Standardscaler in p3_compute.py couldn't handle non-numerical data/categorical variables, so I had to perform label encoding for both datasets
+* And in both datasets, some dates that I had turned into datetime datatypes ended up needing to be ordinally encoded for standardscaler to be able to handle them
 
 
 <br>
