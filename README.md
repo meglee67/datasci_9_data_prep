@@ -8,8 +8,14 @@
 ## Dataset Selection
 * The 1st dataset was taken from data.gov, [Chemicals in Cosmetics](https://catalog.data.gov/dataset/chemicals-in-cosmetics-8c29f)
   * This dataset reflects information that has been reported to the California Safe Cosmetics Program (CSCP) in the California Department of Public Health (CDPH).
+  * This dataset will be used for regression tasks
+  * For example, predicting something like the frequency of reporting incidents over time (using 'InitialDateReported' and 'MostRecentDateReported') or predicting the count of reported incidents based on certain company or product characteristics.
+
+
 * The 2nd dataset was taken from data.gov, [NYPD Shooting Incident Data - Historic](https://catalog.data.gov/dataset/nypd-shooting-incident-data-historic)
   * This dataset reflects shooting data from incidents in NYC.
+  * This dataset will be used for classification tasks
+  * For example, predicting the number of shooting incidents per month or per year in different boroughs (or precincts) based on historical data.
 
 ## Data Cleaning and Transformation Plan
 
@@ -21,11 +27,10 @@
 * ../ moves up one directory level from the scripts directory and then navigates to model_dev1/data/raw
 
 ### Transformation
-* Copied the code from [Week 9 p2_transform.py](https://github.com/hantswilliams/HHA_507_2023/blob/86d8439cd2409c649a4d9404e5d9488971e194c2/WK9/code/model_dev/scripts/p2_transform.py#L71)
-
-### Transformation
 * First I needed to ``pip install sklearn``
-*
+* Copied the code from [Week 9 p2_transform.py](https://github.com/hantswilliams/HHA_507_2023/blob/86d8439cd2409c649a4d9404e5d9488971e194c2/WK9/code/model_dev/scripts/p2_transform.py#L71)
+* Had to change some datatypes and I droppped some columns from the cosmetic dataset, then saved the mapping and processed dataset in the model_dev1/data/processed folder
+
 
 ## Dataset Splitting
 *
