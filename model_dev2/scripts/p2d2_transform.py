@@ -70,4 +70,4 @@ df_mapping_date.to_csv('../data/processed/mapping_vic_age_group.csv', index=Fals
 len(df)
 
 #### save a temporary csv file of 1000 rows to test the model
-df.head(10000).to_csv('../data/processed/shootings.csv', index=False)
+df.head(10000).to_csv('../data/processed/shootings1000.csv', index=False)

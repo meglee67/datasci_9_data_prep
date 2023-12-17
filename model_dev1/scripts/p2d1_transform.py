@@ -33,6 +33,8 @@ for col in columns_to_convert_numbers:
     if df[col].dtype == 'object':
         df[col] = df[col].astype('int64')
 
+df['ChemicalCount'] = df['ChemicalCount'].astype('float64')
+
 ## Check data types after conversion
 print(df.dtypes)
 # now we have a combo of int64, object, datetime64 and some that got turned into float64
@@ -64,7 +66,7 @@ to_keep = [
     'ChemicalName',
     'InitialDateReported',
     'MostRecentDateReported',
-
+    'ChemicalCount',
 ]
 
 # updating the dataframe to only the keep columns 
@@ -87,4 +89,18 @@ df_mapping_date.to_csv('../data/processed/mapping_MostRecentDateReported.csv', i
 len(df)
 
 #### save a temporary csv file of 1000 rows to test the model
-df.head(10000).to_csv('../data/processed/cosmetic.csv', index=False)
+df.head(10000).to_csv('../data/processed/cosmetic1000.csv', index=False)
+
+## Performing label encoding on non-numerical data/categorical variables, so the standardscaler in p3 can handle it
+from sklearn.preprocessing import LabelEncoder
+
+columns_to_encode = ['column1', 'column2']  # Replace with your column names
+
+label_encoder = LabelEncoder()
+
+# Iterating through selected columns and applying label encoding
+for col in columns_to_encode:
+    df[col] = label_encoder.fit_transform(df[col])
+
+# Display the updated DataFrame with label encoded columns
+print(df)
